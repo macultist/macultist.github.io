@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /artifact.html
+Sitemap: https://macultist.github.io/sitemap.xml
