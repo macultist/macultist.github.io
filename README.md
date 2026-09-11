@@ -1,6 +1,8 @@
-# 단타 레이더 (공개 화면)
+# macultist.github.io
 
-이 저장소에는 https://macultist.github.io/ 에 표시되는 완성된 화면 파일만 있습니다.
-분석 코드와 기록 원본은 별도의 비공개 저장소에서 매일 자동으로 생성되어 이곳으로 전달됩니다.
+대문 페이지와 사이트 지도 목록만 있습니다. 각 서비스는 하위 경로에서 독립적으로 운영됩니다.
 
-© 2026 최수원. All rights reserved. 이 사이트의 내용과 디자인의 무단 복제·배포를 금지합니다.
+- /danta/ — 단타 레이더 (저장소 macultist/danta)
+- /petfee/ — 동물병원비 체크 (저장소 macultist/petfee)
+
+© 2026 최수원. All rights reserved.
