@@ -4,5 +4,6 @@
 
 - /daytrade/ — 단타 레이더 (저장소 macultist/daytrade)
 - /petfee/ — 동물병원비 체크 (저장소 macultist/petfee)
+- /restarea/ — 휴게소 물가 레이더 (저장소 macultist/restarea)
 
-© 2026 최수원. All rights reserved.
+© 2026 최수원. All rights reserved. 무단 복제·전재를 금지합니다.
