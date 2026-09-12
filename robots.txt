@@ -3,3 +3,4 @@ Allow: /
 Sitemap: https://macultist.github.io/sitemap.xml
 Sitemap: https://macultist.github.io/daytrade/sitemap.xml
 Sitemap: https://macultist.github.io/petfee/sitemap.xml
+Sitemap: https://macultist.github.io/devparam/sitemap.xml
