@@ -1,0 +1,15 @@
+{
+  "name": "devparam-src",
+  "private": true,
+  "version": "1.0.0",
+  "description": "반도체 소자 파라미터 추출기 — 소스·테스트·화면 생성 (비공개)",
+  "type": "module",
+  "scripts": {
+    "test": "node test/run.mjs",
+    "build": "node tools/build.mjs",
+    "serve": "python3 -m http.server 8765 --directory site"
+  },
+  "devDependencies": {
+    "terser": "^5.51.2"
+  }
+}

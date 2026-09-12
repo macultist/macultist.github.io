@@ -1,0 +1,54 @@
+name: build-and-publish
+on:
+  schedule:
+    - cron: "10 19 * * *"          # 매일 04:10 KST — 점검 실행(결과가 바뀐 경우에만 진열장 갱신)
+  workflow_dispatch:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+concurrency:
+  group: build-and-publish
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: 코드 뭉개기 도구 설치
+        run: npm install --silent --no-audit --no-fund terser@5
+      - name: 정확도 테스트 (실패하면 배포하지 않음)
+        run: node test/run.mjs
+      - name: 완성 화면 생성 (site/)
+        run: node tools/build.mjs
+      - name: 배포 열쇠 준비
+        env:
+          DEPLOY_KEY: ${{ secrets.PAGES_DEPLOY_KEY }}
+        run: |
+          [ -n "$DEPLOY_KEY" ] || { echo "PAGES_DEPLOY_KEY 시크릿이 없습니다"; exit 1; }
+          mkdir -p ~/.ssh && echo "$DEPLOY_KEY" > ~/.ssh/id_ed25519 && chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan github.com >> ~/.ssh/known_hosts 2>/dev/null
+      - name: 진열장과 비교 (스케줄 실행은 내용이 바뀐 경우에만 갱신)
+        id: diff
+        run: |
+          rm -rf /tmp/cur && (git clone -q --depth 1 git@github.com:macultist/devparam.git /tmp/cur || mkdir -p /tmp/cur)
+          rm -rf /tmp/cur/.git
+          if diff -rq --exclude=README.md site /tmp/cur >/dev/null 2>&1; then echo "changed=no" >> "$GITHUB_OUTPUT"; else echo "changed=yes" >> "$GITHUB_OUTPUT"; fi
+          cat "$GITHUB_OUTPUT"
+      - name: 공개 저장소(macultist/devparam)로 완성 화면만 전달
+        if: github.event_name != 'schedule' || steps.diff.outputs.changed == 'yes'
+        run: |
+          rm -rf /tmp/pub && mkdir /tmp/pub && cp -R site/. /tmp/pub/
+          cd /tmp/pub && git init -q -b main && git add -A
+          git -c user.name=devparam-bot -c user.email=devparam-bot@users.noreply.github.com commit -qm "publish $(date -u +%Y-%m-%dT%H:%MZ)"
+          git remote add origin git@github.com:macultist/devparam.git
+          git push --force origin main
+      - name: 갱신 시 Discord 알림
+        if: steps.diff.outputs.changed == 'yes'
+        env:
+          HOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: |
+          [ -n "$HOOK" ] && curl -s -X POST -H "Content-Type: application/json" -d '{"content":"🔬 반도체 소자 파라미터 추출기 — 화면을 갱신했어요. https://macultist.github.io/devparam/"}' "$HOOK" || true
