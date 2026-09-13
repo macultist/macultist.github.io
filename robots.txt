@@ -4,4 +4,5 @@ Sitemap: https://app.macultist.com/sitemap.xml
 Sitemap: https://app.macultist.com/daytrade/sitemap.xml
 Sitemap: https://app.macultist.com/petfee/sitemap.xml
 Sitemap: https://app.macultist.com/devparam/sitemap.xml
+Sitemap: https://app.macultist.com/waste/sitemap.xml
 Sitemap: https://app.macultist.com/restarea/sitemap.xml

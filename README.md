@@ -6,5 +6,6 @@
 - /petfee/ — 동물병원비 체크 (저장소 macultist/petfee)
 - /restarea/ — 휴게소 물가 레이더 (저장소 macultist/restarea)
 - /devparam/ — 반도체 소자 파라미터 추출기 (저장소 macultist/devparam)
+- /waste/ — 우리동네 쓰레기 (저장소 macultist/waste)
 
 © 2026 최수원. All rights reserved. 무단 복제·전재를 금지합니다.
