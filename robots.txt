@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
-Sitemap: https://macultist.github.io/sitemap.xml
-Sitemap: https://macultist.github.io/daytrade/sitemap.xml
-Sitemap: https://macultist.github.io/petfee/sitemap.xml
-Sitemap: https://macultist.github.io/devparam/sitemap.xml
-Sitemap: https://macultist.github.io/restarea/sitemap.xml
+Sitemap: https://app.macultist.com/sitemap.xml
+Sitemap: https://app.macultist.com/daytrade/sitemap.xml
+Sitemap: https://app.macultist.com/petfee/sitemap.xml
+Sitemap: https://app.macultist.com/devparam/sitemap.xml
+Sitemap: https://app.macultist.com/restarea/sitemap.xml
