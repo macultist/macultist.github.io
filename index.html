@@ -17,10 +17,12 @@ a.site:hover{transform:translateY(-2px);border-color:var(--navy);box-shadow:0 10
 .ic.radar{background:#dff5ec}.ic.pet{background:#fbeedd}.ic.rest{background:#e3ebfa}.ic.chip{background:#ece4f7}.ic.waste{background:#eaf3d6}
 .t{font-size:19px;font-weight:700}.d{color:var(--muted);font-size:14px;margin-top:2px}
 .go{color:var(--muted);font-size:20px}
+h2{font-size:17px;margin:44px 0 6px;color:var(--navy)}p.sub{margin:0 0 16px;color:var(--muted);font-size:14px}
+.reads{display:grid;gap:12px}.reads details{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:0}.reads summary{cursor:pointer;list-style:none;padding:14px 18px;font-weight:700;font-size:15px;display:flex;align-items:center;gap:10px}.reads summary::-webkit-details-marker{display:none}.reads summary::after{content:"+";margin-left:auto;color:var(--muted);font-weight:400}.reads details[open] summary::after{content:"−"}.reads ul{margin:0;padding:0 18px 14px 18px;list-style:none;display:grid;gap:6px}.reads li a{color:var(--ink);text-decoration:none;font-size:14px}.reads li a:hover{text-decoration:underline}.reads .all{color:var(--accent);font-size:13px}
 footer{margin-top:40px;color:var(--muted);font-size:13px}
 @media(max-width:480px){a.site{grid-template-columns:44px 1fr}.go{display:none}.ic{width:44px;height:44px;font-size:22px}}
 </style></head><body><div class="wrap">
-<h1>Macultist</h1><p class="lead">직접 만들어 운영하는 웹 서비스들입니다.</p>
+<h1>Macultist</h1><p class="lead">공공데이터를 매일 자동으로 모아 누구나 바로 쓸 수 있게 정리한 웹 서비스들입니다. 회원가입 없이 무료로 이용할 수 있습니다.</p>
 <div class="list">
 <a class="site" href="/daytrade/"><span class="ic radar">📡</span><span><span class="t">단타 레이더</span><div class="d">매일 장 마감 후 코스피·코스닥 주목·주의 종목과 성적표를 자동 공개</div></span><span class="go">→</span></a>
 <a class="site" href="/petfee/"><span class="ic pet">🐾</span><span><span class="t">동물병원비 체크</span><div class="d">우리 동네 동물병원 진료비 비교와 영수증 판정기</div></span><span class="go">→</span></a>
@@ -28,5 +30,39 @@ footer{margin-top:40px;color:var(--muted);font-size:13px}
 <a class="site" href="/devparam/"><span class="ic chip">🔬</span><span><span class="t">반도체 소자 파라미터 추출기</span><div class="d">MOSFET·다이오드 I–V 파일에서 Vth·SS·이동도·λ·n·Rs 를 브라우저 안에서 바로 추출</div></span><span class="go">→</span></a>
 <a class="site" href="/waste/"><span class="ic waste">🗑️</span><span><span class="t">우리동네 쓰레기</span><div class="d">시군구별 대형폐기물 스티커 가격과 쓰레기 배출 요일, 폐가전 무상수거 안내를 한 번에</div></span><span class="go">→</span></a>
 </div>
-<footer>© 2026 Macultist. All rights reserved.</footer>
+<h2>읽을거리</h2><p class="sub">각 서비스의 데이터를 어떻게 읽고 쓰면 되는지 정리한 글입니다.</p>
+<div class="reads">
+<details open><summary>🐾 동물병원비 체크</summary><ul>
+<li><a href="/petfee/guide/why-prices-differ.html">동물병원 진료비는 왜 병원마다 다른가</a></li>
+<li><a href="/petfee/guide/read-receipt.html">동물병원 영수증 읽는 법</a></li>
+<li><a href="/petfee/guide/if-expensive.html">우리 동네 진료비가 비싸다고 나왔다면</a></li>
+<li><a href="/petfee/guide/first-year-vaccines.html">강아지·고양이 첫해 예방접종 비용 정리</a></li>
+<li><a href="/petfee/guide/fee-disclosure-2026.html">동물병원 진료비 공개, 무엇이 어떻게 바뀌나</a></li>
+<li><a class="all" href="/petfee/guide/faq.html">자주 묻는 질문 →</a></li></ul></details>
+<details><summary>🛣️ 휴게소 물가 레이더</summary><ul>
+<li><a href="/restarea/guide/holiday-tips.html">명절 귀성길 휴게소 가성비 고르는 법</a></li>
+<li><a href="/restarea/guide/who-sets-prices.html">휴게소 음식값은 누가 정하나</a></li>
+<li><a href="/restarea/guide/how-to-read-index.html">휴게소 물가 지수 읽는 법</a></li>
+<li><a href="/restarea/guide/price-history.html">휴게소 대표 메뉴 가격 변천</a></li>
+<li><a class="all" href="/restarea/guide/faq.html">자주 묻는 질문 →</a></li></ul></details>
+<details><summary>🗑️ 우리동네 쓰레기</summary><ul>
+<li><a href="/waste/guide/how-to-buy-sticker.html">대형폐기물 스티커, 어디서 어떻게 사나</a></li>
+<li><a href="/waste/guide/free-disposal.html">돈 안 내고 버리는 방법: 폐가전 무상수거와 재활용</a></li>
+<li><a href="/waste/guide/why-prices-differ.html">같은 소파인데 왜 동네마다 값이 다를까</a></li>
+<li><a href="/waste/guide/moving-cost.html">이사·정리할 때 쓰레기 비용 계산하기</a></li>
+<li><a class="all" href="/waste/guide/faq.html">자주 묻는 질문 →</a></li></ul></details>
+<details><summary>📡 단타 레이더</summary><ul>
+<li><a href="/daytrade/guide/rsi.html">RSI란 무엇인가</a></li>
+<li><a href="/daytrade/guide/moving-average.html">이동평균선 정배열이 뜻하는 것</a></li>
+<li><a href="/daytrade/guide/volume.html">거래량이 평소의 1.3배라는 건 어떤 신호인가</a></li>
+<li><a href="/daytrade/guide/scorecard.html">성적표 읽는 법</a></li>
+<li><a class="all" href="/daytrade/guide/faq.html">자주 묻는 질문 →</a></li></ul></details>
+<details><summary>🔬 반도체 소자 파라미터 추출기</summary><ul>
+<li><a href="/devparam/guide/vth-methods.html">문턱전압(Vth) 추출 기법 4가지 비교</a></li>
+<li><a href="/devparam/guide/ss-mobility.html">아문턱 기울기(SS)와 이동도, 어디서 읽어야 정확한가</a></li>
+<li><a href="/devparam/guide/diode-n-rs.html">다이오드 이상계수(n)와 직렬저항(Rs) 추출</a></li>
+<li><a href="/devparam/guide/measurement-files.html">측정 파일 준비하기: Keithley·B1500 CSV 정리법</a></li>
+<li><a class="all" href="/devparam/guide/faq.html">자주 묻는 질문 →</a></li></ul></details>
+</div>
+<footer>© 2026 Macultist · <a href="mailto:macultist@gmail.com" style="color:inherit">문의</a> · 각 서비스의 개인정보처리방침은 해당 사이트 하단에 있습니다.</footer>
 </div></body></html>
