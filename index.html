@@ -1,68 +1,103 @@
 <!DOCTYPE html>
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="naver-site-verification" content="741103228dae7af49605fa201f36f47165426cd4"><meta name="naver-site-verification" content="cd746b0add3570b9714a2d81a83e57c0b4f46a5f"><meta name="google-site-verification" content="x5873g9UA1oZAIHO5xOBWvy7rqr7qeFvutBA9cNP9oQ">
-<meta name="theme-color" content="#e9edf2"><meta name="description" content="Macultist가 만든 웹 서비스 모음: 단타 레이더, 동물병원비 체크, 휴게소 물가 레이더, 반도체 소자 파라미터 추출기, 우리동네 쓰레기"><meta property="og:title" content="Macultist"><meta property="og:description" content="직접 만들어 운영하는 웹 서비스들: 단타 레이더, 동물병원비 체크, 휴게소 물가 레이더, 반도체 소자 파라미터 추출기, 우리동네 쓰레기"><meta property="og:type" content="website"><meta property="og:url" content="https://app.macultist.com/"><meta property="og:locale" content="ko_KR"><meta property="og:image" content="https://app.macultist.com/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://app.macultist.com/og.png">
+<meta name="theme-color" content="#e9edf2"><meta name="description" content="동물병원비, 휴게소 밥값, 쓰레기 스티커, 주식 레이더, 반도체 소자 계산기. 공공데이터를 매일 자동으로 정리하는 무료 서비스 5개, 회원가입 없이 씁니다."><meta property="og:title" content="Macultist"><meta property="og:description" content="동물병원비, 휴게소 밥값, 쓰레기 스티커, 주식 레이더, 반도체 소자 계산기. 공공데이터를 매일 자동으로 정리하는 무료 서비스 5개, 회원가입 없이 씁니다."><meta property="og:type" content="website"><meta property="og:url" content="https://app.macultist.com/"><meta property="og:locale" content="ko_KR"><meta property="og:image" content="https://app.macultist.com/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:description" content="동물병원비, 휴게소 밥값, 쓰레기 스티커, 주식 레이더, 반도체 소자 계산기. 공공데이터를 매일 자동으로 정리하는 무료 서비스 5개, 회원가입 없이 씁니다."><meta name="twitter:image" content="https://app.macultist.com/og.png">
 <title>Macultist</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230f1b2d'/><text x='50' y='54' font-size='58' text-anchor='middle' dominant-baseline='central'>🧑‍💻</text></svg>"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
-:root{color-scheme:light;--bg:#e9edf2;--surface:#ffffff;--ink:#0f1b2d;--muted:#55627a;--line:#cfd6e0;--accent:#0d9f7c;--pet:#d97c1f;--navy:#0f1b2d}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:"Pretendard Variable",Pretendard,-apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;line-height:1.5;word-break:keep-all}
-.wrap{max-width:760px;margin:0 auto;padding:72px 20px 80px}
-h1{font-size:22px;margin:0 0 6px;letter-spacing:-.01em;color:var(--navy)}h1::after{content:"";display:block;width:36px;height:3px;background:var(--navy);margin-top:10px;border-radius:2px}p.lead{margin:0 0 32px;color:var(--muted)}
-.list{display:grid;gap:14px}
-a.site{box-shadow:0 1px 2px rgba(15,27,45,.06);display:grid;grid-template-columns:52px 1fr auto;gap:16px;align-items:center;padding:20px 22px;background:var(--surface);border:1px solid var(--line);border-radius:12px;color:inherit;text-decoration:none;transition:transform .2s,border-color .2s}
-a.site:hover{transform:translateY(-2px);border-color:var(--navy);box-shadow:0 10px 24px rgba(15,27,45,.12)}
-.ic{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:26px}
-.ic.radar{background:#dff5ec}.ic.pet{background:#fbeedd}.ic.rest{background:#e3ebfa}.ic.chip{background:#ece4f7}.ic.waste{background:#eaf3d6}
-.t{font-size:19px;font-weight:700}.d{color:var(--muted);font-size:14px;margin-top:2px}
-.go{color:var(--muted);font-size:20px}
-h2{font-size:17px;margin:44px 0 6px;color:var(--navy)}p.sub{margin:0 0 16px;color:var(--muted);font-size:14px}
-.reads{display:grid;gap:12px}.reads details{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:0}.reads summary{cursor:pointer;list-style:none;padding:14px 18px;font-weight:700;font-size:15px;display:flex;align-items:center;gap:10px}.reads summary::-webkit-details-marker{display:none}.reads summary::after{content:"+";margin-left:auto;color:var(--muted);font-weight:400}.reads details[open] summary::after{content:"−"}.reads ul{margin:0;padding:0 18px 14px 18px;list-style:none;display:grid;gap:6px}.reads li a{color:var(--ink);text-decoration:none;font-size:14px}.reads li a:hover{text-decoration:underline}.reads .all{color:var(--accent);font-size:13px}
-footer{margin-top:40px;color:var(--muted);font-size:13px}
-@media(max-width:480px){a.site{grid-template-columns:44px 1fr}.go{display:none}.ic{width:44px;height:44px;font-size:22px}}
-</style><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Macultist","url":"https://app.macultist.com/","inLanguage":"ko","description":"공공데이터를 매일 자동으로 모아 정리한 무료 웹 서비스 모음: 동물병원비 체크, 휴게소 물가 레이더, 우리동네 쓰레기, 단타 레이더, 반도체 소자 파라미터 추출기","hasPart":[{"@type":"WebSite","name":"동물병원비 체크","url":"https://app.macultist.com/petfee/"},{"@type":"WebSite","name":"휴게소 물가 레이더","url":"https://app.macultist.com/restarea/"},{"@type":"WebSite","name":"우리동네 쓰레기","url":"https://app.macultist.com/waste/"},{"@type":"WebSite","name":"단타 레이더","url":"https://app.macultist.com/daytrade/"},{"@type":"WebSite","name":"반도체 소자 파라미터 추출기","url":"https://app.macultist.com/devparam/"}]}</script></head><body><div class="wrap">
-<h1>Macultist</h1><p class="lead">공공데이터를 매일 자동으로 모아 누구나 바로 쓸 수 있게 정리한 웹 서비스들입니다. 회원가입 없이 무료로 이용할 수 있습니다.</p>
-<div class="list">
-<a class="site" href="/daytrade/"><span class="ic radar">📡</span><span><span class="t">단타 레이더</span><div class="d">매일 장 마감 후 코스피·코스닥 주목·주의 종목과 성적표를 자동 공개</div></span><span class="go">→</span></a>
-<a class="site" href="/petfee/"><span class="ic pet">🐾</span><span><span class="t">동물병원비 체크</span><div class="d">우리 동네 동물병원 진료비 비교와 영수증 판정기</div></span><span class="go">→</span></a>
-<a class="site" href="/restarea/"><span class="ic rest">🛣️</span><span><span class="t">휴게소 물가 레이더</span><div class="d">전국 고속도로 휴게소 음식값을 매일 자동 수집해 전국 비교·물가 지수·가격 변동 공개</div></span><span class="go">→</span></a>
-<a class="site" href="/devparam/"><span class="ic chip">🔬</span><span><span class="t">반도체 소자 파라미터 추출기</span><div class="d">MOSFET·다이오드 I–V 파일에서 Vth·SS·이동도·λ·n·Rs 를 브라우저 안에서 바로 추출</div></span><span class="go">→</span></a>
-<a class="site" href="/waste/"><span class="ic waste">🗑️</span><span><span class="t">우리동네 쓰레기</span><div class="d">시군구별 대형폐기물 스티커 가격과 쓰레기 배출 요일, 폐가전 무상수거 안내를 한 번에</div></span><span class="go">→</span></a>
-</div>
-<h2>읽을거리</h2><p class="sub">각 서비스의 데이터를 어떻게 읽고 쓰면 되는지 정리한 글입니다.</p>
+:root{color-scheme:light;--bg:#e9edf2;--surface:#fff;--ink:#0f1b2d;--text:#28354a;--muted:#55627a;--line:#cfd6e0;--accent:#0d9f7c;--accent-ink:#0a6b55}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Pretendard Variable",Pretendard,-apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;line-height:1.6;word-break:keep-all;overflow-wrap:anywhere;-webkit-font-smoothing:antialiased}
+header,main,footer{max-width:1088px;margin-inline:auto;padding-inline:clamp(20px,4vw,24px)}
+a,summary{scroll-margin-block:8px}a:focus-visible,summary:focus-visible{outline:2px solid var(--accent-ink);outline-offset:3px;border-radius:6px}
+header{display:flex;flex-wrap:wrap;white-space:nowrap;align-items:center;justify-content:space-between;padding-block:18px}
+.brand{display:flex;align-items:center;gap:10px;margin:0;font-size:19px;font-weight:800;letter-spacing:-.02em}.mk{display:grid;place-items:center;width:32px;height:32px;border-radius:9px;background:var(--ink);font-size:17px}
+nav{display:flex;margin-right:-12px}nav a{display:flex;align-items:center;min-height:44px;padding:0 12px;color:var(--muted);font-size:15px;font-weight:500;text-decoration:none}nav a:hover{color:var(--ink)}
+.hero{margin:clamp(28px,6vw,64px) 0 clamp(28px,5vw,48px)}.viz{display:none}.viz svg{display:block;overflow:visible}.viz text{font-family:inherit}
+h1{margin:0;font-size:clamp(31px,5vw + 12px,52px);font-weight:800;line-height:1.22;letter-spacing:-.035em;text-wrap:balance}h1 span{display:inline-block}h1>span:first-child{color:var(--muted)}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);margin:0;border-top:1px solid var(--ink)}.facts div{padding:16px 20px 18px;border-left:1px solid var(--line)}.facts div:first-child{padding-left:0;border-left:0}.facts dt{color:var(--muted);font-size:13px}.facts dd{margin:2px 0 0;font-size:18px;font-weight:700;letter-spacing:-.02em}
+.row{display:grid;gap:24px 56px;border-top:1px solid var(--ink);padding-top:28px}
+.essay{max-width:640px}.essay p{margin:0;text-wrap:pretty}
+.lead{font-size:clamp(18px,1.2vw + 13px,21px);font-weight:500;line-height:1.7;letter-spacing:-.012em}
+.lead+p{margin-top:1.5em;font-size:clamp(16px,.5vw + 14px,17px);line-height:1.85;color:var(--text)}.essay strong{color:var(--ink);font-weight:700}
+.sec{margin-top:clamp(56px,8vw,88px);scroll-margin-top:24px}
+h2{margin:0;font-size:22px;line-height:1.3;letter-spacing:-.02em}.sub{margin:6px 0 0;color:var(--muted);font-size:14px;text-wrap:balance}
+.list{list-style:none;margin:0;padding:0;background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 1px 2px rgba(15,27,45,.05)}.list li+li{border-top:1px solid var(--line)}
+a.site{display:grid;grid-template-columns:52px minmax(0,1fr) auto;gap:18px;align-items:center;padding:20px 24px;color:inherit;text-decoration:none}
+a.site:hover{background:#f5f7fa;box-shadow:inset 3px 0 var(--h)}a.site:focus-visible{outline-offset:-3px;border-radius:14px}
+.ic{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;background:var(--t)}
+.pet{--t:#fbeedd;--h:#3d8a66}.rest{--t:#e3ebfa;--h:#e0762e}.waste{--t:#eaf3d6;--h:#558b2f}.radar{--t:#dff5ec;--h:#0b1220}.chip{--t:#ece4f7;--h:#6f52a8}
+.t,.d{display:block;text-wrap:balance}.nb{white-space:nowrap}.t{font-size:19px;font-weight:700;letter-spacing:-.02em}.d{margin-top:3px;color:var(--muted);font-size:14.5px;line-height:1.55}
+.go{color:var(--muted);font-size:20px}a.site:hover .go{transform:translateX(4px);color:var(--h)}
+.reads details{border-top:1px solid var(--line)}.reads details:last-child{border-bottom:1px solid var(--line)}
+.reads summary{cursor:pointer;list-style:none;min-height:56px;display:flex;align-items:center;gap:10px;font-size:16px;font-weight:700}.reads summary::-webkit-details-marker{display:none}.reads summary span{display:grid;place-items:center;width:32px;height:32px;border-radius:9px;background:var(--t);font-size:16px}
+.reads summary::after{content:"+";content:"+"/"";margin-left:auto;width:24px;padding-bottom:3px;text-align:center;color:var(--muted);font-size:20px;font-weight:400}.reads details[open] summary::after{content:"−";content:"−"/""}
+.reads ul{margin:0;padding:0 0 14px;list-style:none;display:grid}
+.reads li a{display:flex;align-items:center;min-height:44px;padding-block:4px;text-wrap:balance;color:var(--text);font-size:15px;text-decoration:none}.reads li a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:3px}.reads .all{color:var(--accent-ink);font-weight:600}
+footer{margin-top:clamp(56px,8vw,88px);padding-bottom:56px;color:var(--muted);font-size:13px}footer p{margin:0;text-wrap:balance;border-top:1px solid var(--line);padding-top:24px}footer a{position:relative;display:inline-block;padding:12px;margin:-12px;color:inherit;text-underline-offset:3px}
+@media(min-width:640px){.reads ul{grid-template-columns:1fr 1fr;column-gap:32px}}
+@media(min-width:860px){.facts{grid-template-columns:255px repeat(3,1fr)}#h-about{padding-top:3px}.row{grid-template-columns:220px minmax(0,1fr)}.row>:first-child{position:sticky;top:24px;align-self:start}.reads{margin-top:-14px}.reads details:first-child{border-top:0}}
+@media(min-width:1024px){.hero{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:28px;align-items:center}.viz{display:block}h1{font-size:clamp(44px,4.4vw,50px)}}
+@media(max-width:600px){.facts{grid-template-columns:1fr 1fr}.facts div{padding:12px 16px 14px}.facts div:nth-child(odd){padding-left:0;border-left:0}.facts div:nth-child(n+3){border-top:1px solid var(--line)}.facts dd{font-size:16px}}
+@media(max-width:480px){a.site{grid-template-columns:44px minmax(0,1fr);gap:14px;padding:16px}.go{display:none}.ic{width:44px;height:44px;border-radius:12px;font-size:22px}.t{font-size:18px}}
+@media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}a.site,.go{transition:background .2s,box-shadow .2s,transform .2s,color .2s}}
+</style><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Macultist","url":"https://app.macultist.com/","inLanguage":"ko","description":"공공데이터를 매일 자동으로 모아 정리한 무료 웹 서비스 모음: 동물병원비 체크, 휴게소 물가 레이더, 우리동네 쓰레기, 단타 레이더, 반도체 소자 파라미터 추출기","hasPart":[{"@type":"WebSite","name":"동물병원비 체크","url":"https://app.macultist.com/petfee/"},{"@type":"WebSite","name":"휴게소 물가 레이더","url":"https://app.macultist.com/restarea/"},{"@type":"WebSite","name":"우리동네 쓰레기","url":"https://app.macultist.com/waste/"},{"@type":"WebSite","name":"단타 레이더","url":"https://app.macultist.com/daytrade/"},{"@type":"WebSite","name":"반도체 소자 파라미터 추출기","url":"https://app.macultist.com/devparam/"}]}</script></head><body>
+<header><p class="brand"><span class="mk" aria-hidden="true">🧑‍💻</span>Macultist</p><nav aria-label="바로가기"><a href="#services">서비스</a><a href="#reads">읽을거리</a></nav></header>
+<main>
+<div class="hero"><h1><span>공공데이터는 이미 <span>공개돼 있는데,</span></span> <span>읽기 쉽게 정리해 <span>둔 곳이 없었습니다.</span></span></h1>
+<div class="viz" aria-hidden="true"><svg viewBox="0 0 320 264" width="320" height="264"><defs><linearGradient id="f" x2="0" y2="1"><stop offset=".56" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><mask id="m"><rect width="320" height="264" fill="url(#f)"/></mask><filter id="s" x="-30%" y="-80%" width="160%" height="290%" color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="10" stdDeviation="18" flood-color="#0f1b2d" flood-opacity=".14"/></filter></defs>
+<g mask="url(#m)"><rect x="16" y="10" width="236" height="262" rx="12" fill="#fff" opacity=".55" transform="rotate(2.5 134 140)"/><rect x="6" y="18" width="244" height="262" rx="12" fill="#fff" stroke="#cfd6e0"/><path d="M6 73h244M6 98h244M6 123h244M6 148h244M6 173h244M6 198h244M6 223h244M6 248h244M52 48v232M134 48v232M194 48v232" stroke="#e8ecf2"/><path d="M6 48h244" stroke="#cfd6e0"/><path d="M20 33h16M66 33h30M148 33h22" stroke="#0f1b2d" stroke-opacity=".4" stroke-width="6" stroke-linecap="round"/><path d="M20 60.5h18M66 60.5h52M148 60.5h30M208 60.5h24M20 85.5h20M66 85.5h38M148 85.5h24M208 85.5h30M20 110.5h16M66 110.5h56M148 110.5h34M208 110.5h20M20 160.5h19M66 160.5h42M148 160.5h26M208 160.5h28M20 185.5h17M66 185.5h54M148 185.5h32M208 185.5h22M20 210.5h21M66 210.5h34M148 210.5h25M208 210.5h30M20 235.5h16M66 235.5h48M148 235.5h30M208 235.5h24" stroke="#d5dce6" stroke-width="6" stroke-linecap="round"/></g>
+<path d="M6 123h244v25H6z" fill="#0d9f7c" fill-opacity=".13"/><path d="M8 123v25" stroke="#0d9f7c" stroke-width="4"/><path d="M20 135.5h20M66 135.5h46M148 135.5h28M208 135.5h26" stroke="#0d9f7c" stroke-width="6" stroke-linecap="round"/>
+<rect x="170" y="4" width="120" height="28" rx="14" fill="#0f1b2d"/><text x="230" y="22.5" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">수만 행짜리 엑셀</text>
+<path d="M250 135.5h24a12 12 0 0 1 12 12v30M280 172l6 6 6-6" fill="none" stroke="#0d9f7c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<g><rect x="96" y="184" width="216" height="62" rx="18" fill="#fff" stroke="#cfd6e0" filter="url(#s)"/><circle cx="128" cy="215" r="15" fill="#0d9f7c"/><path d="M121 215l5 5 9.5-10" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><text x="154" y="213" font-size="15" font-weight="800" fill="#0f1b2d">3초 안에 답</text><path d="M157 229h96" stroke="#d5dce6" stroke-width="6" stroke-linecap="round"/></g></svg></div></div>
+<dl class="facts"><div><dt>서비스</dt><dd>5개</dd></div><div><dt>데이터 수집</dt><dd>매일 자동</dd></div><div><dt>회원가입·로그인</dt><dd>없음</dd></div><div><dt>이용 요금</dt><dd>무료</dd></div></dl>
+<section class="row" aria-labelledby="h-about"><div><h2 id="h-about">소개</h2></div>
+<div class="essay"><p class="lead">정부와 공공기관은 매일 수천 줄씩 데이터를 공개합니다. 동물병원 진료비, 고속도로 휴게소 음식값, 대형폐기물 스티커 가격, 주식 시세 같은 것들입니다. 그런데 그 파일을 실제로 열어 본 사람은 거의 없습니다. 수만 행짜리 엑셀을 내려받아서 우리 동네만 골라내는 일은 누구한테도 즐겁지 않으니까요.</p>
+<p><strong>Macultist는 그 일을 대신합니다.</strong> 봇이 매일 공공데이터를 자동으로 모아 오고, 지도에서 동네를 누르거나 이름만 치면 3초 안에 답이 나오도록 정리해 둡니다. 회원가입이나 로그인 없이 쓰면 되고, 돈도 받지 않습니다. 서비스 다섯 개는 주제가 제각각이지만 지키는 원칙은 같습니다. 출처를 밝히고, 계산 방법을 공개하고, 틀릴 수 있는 부분이 있으면 숨기지 않고 <span class="nb">적어 둡니다.</span></p></div></section>
+<section class="row sec" id="services" aria-labelledby="h-services"><div><h2 id="h-services">서비스</h2><p class="sub">무료 서비스 5개, 회원가입 없이 씁니다.</p></div>
+<ul class="list">
+<li><a class="site pet" href="/petfee/"><span class="ic" aria-hidden="true">🐾</span><span><span class="t">동물병원비 체크</span><span class="d">우리 동네 동물병원 진료비 비교와 영수증 판정기</span></span><span class="go" aria-hidden="true">→</span></a></li>
+<li><a class="site rest" href="/restarea/"><span class="ic" aria-hidden="true">🛣️</span><span><span class="t">휴게소 물가 레이더</span><span class="d">전국 고속도로 휴게소 음식값을 매일 자동 수집해 전국 <span class="nb">비교·물가</span> <span class="nb">지수·가격</span> 변동 공개</span></span><span class="go" aria-hidden="true">→</span></a></li>
+<li><a class="site waste" href="/waste/"><span class="ic" aria-hidden="true">🗑️</span><span><span class="t">우리동네 쓰레기</span><span class="d">시군구별 대형폐기물 스티커 가격과 쓰레기 배출 요일, 폐가전 무상수거 안내를 한 번에</span></span><span class="go" aria-hidden="true">→</span></a></li>
+<li><a class="site radar" href="/daytrade/"><span class="ic" aria-hidden="true">📡</span><span><span class="t">단타 레이더</span><span class="d">매일 장 마감 후 <span class="nb">코스피·코스닥</span> <span class="nb">주목·주의</span> 종목과 성적표를 자동 공개</span></span><span class="go" aria-hidden="true">→</span></a></li>
+<li><a class="site chip" href="/devparam/"><span class="ic" aria-hidden="true">🔬</span><span><span class="t">반도체 소자 파라미터 추출기</span><span class="d"><span class="nb">MOSFET·다이오드</span> I–V 파일에서 <span class="nb">Vth·SS·이동도·λ·n·Rs</span> 를 브라우저 안에서 바로 추출</span></span><span class="go" aria-hidden="true">→</span></a></li>
+</ul></section>
+<section class="row sec" id="reads" aria-labelledby="h-reads"><div><h2 id="h-reads">읽을거리</h2><p class="sub">각 서비스의 데이터를 어떻게 읽고 쓰면 되는지 정리한 글입니다.</p></div>
 <div class="reads">
-<details open><summary>🐾 동물병원비 체크</summary><ul>
+<details class="pet" open><summary><span aria-hidden="true">🐾</span> 동물병원비 체크</summary><ul>
 <li><a href="/petfee/guide/why-prices-differ.html">동물병원 진료비는 왜 병원마다 다른가</a></li>
 <li><a href="/petfee/guide/read-receipt.html">동물병원 영수증 읽는 법</a></li>
 <li><a href="/petfee/guide/if-expensive.html">우리 동네 진료비가 비싸다고 나왔다면</a></li>
 <li><a href="/petfee/guide/first-year-vaccines.html">강아지·고양이 첫해 예방접종 비용 정리</a></li>
 <li><a href="/petfee/guide/fee-disclosure-2026.html">동물병원 진료비 공개, 무엇이 어떻게 바뀌나</a></li>
 <li><a class="all" href="/petfee/guide/faq.html">자주 묻는 질문 →</a></li></ul></details>
-<details><summary>🛣️ 휴게소 물가 레이더</summary><ul>
+<details class="rest"><summary><span aria-hidden="true">🛣️</span> 휴게소 물가 레이더</summary><ul>
 <li><a href="/restarea/guide/holiday-tips.html">명절 귀성길 휴게소 가성비 고르는 법</a></li>
 <li><a href="/restarea/guide/who-sets-prices.html">휴게소 음식값은 누가 정하나</a></li>
 <li><a href="/restarea/guide/how-to-read-index.html">휴게소 물가 지수 읽는 법</a></li>
 <li><a href="/restarea/guide/price-history.html">휴게소 대표 메뉴 가격 변천</a></li>
 <li><a class="all" href="/restarea/guide/faq.html">자주 묻는 질문 →</a></li></ul></details>
-<details><summary>🗑️ 우리동네 쓰레기</summary><ul>
+<details class="waste"><summary><span aria-hidden="true">🗑️</span> 우리동네 쓰레기</summary><ul>
 <li><a href="/waste/guide/how-to-buy-sticker.html">대형폐기물 스티커, 어디서 어떻게 사나</a></li>
 <li><a href="/waste/guide/free-disposal.html">돈 안 내고 버리는 방법: 폐가전 무상수거와 재활용</a></li>
 <li><a href="/waste/guide/why-prices-differ.html">같은 소파인데 왜 동네마다 값이 다를까</a></li>
 <li><a href="/waste/guide/moving-cost.html">이사·정리할 때 쓰레기 비용 계산하기</a></li>
 <li><a class="all" href="/waste/guide/faq.html">자주 묻는 질문 →</a></li></ul></details>
-<details><summary>📡 단타 레이더</summary><ul>
+<details class="radar"><summary><span aria-hidden="true">📡</span> 단타 레이더</summary><ul>
 <li><a href="/daytrade/guide/rsi.html">RSI란 무엇인가</a></li>
 <li><a href="/daytrade/guide/moving-average.html">이동평균선 정배열이 뜻하는 것</a></li>
 <li><a href="/daytrade/guide/volume.html">거래량이 평소의 1.3배라는 건 어떤 신호인가</a></li>
 <li><a href="/daytrade/guide/scorecard.html">성적표 읽는 법</a></li>
 <li><a class="all" href="/daytrade/guide/faq.html">자주 묻는 질문 →</a></li></ul></details>
-<details><summary>🔬 반도체 소자 파라미터 추출기</summary><ul>
+<details class="chip"><summary><span aria-hidden="true">🔬</span> 반도체 소자 파라미터 추출기</summary><ul>
 <li><a href="/devparam/guide/vth-methods.html">문턱전압(Vth) 추출 기법 4가지 비교</a></li>
 <li><a href="/devparam/guide/ss-mobility.html">아문턱 기울기(SS)와 이동도, 어디서 읽어야 정확한가</a></li>
 <li><a href="/devparam/guide/diode-n-rs.html">다이오드 이상계수(n)와 직렬저항(Rs) 추출</a></li>
 <li><a href="/devparam/guide/measurement-files.html">측정 파일 준비하기: Keithley·B1500 CSV 정리법</a></li>
 <li><a class="all" href="/devparam/guide/faq.html">자주 묻는 질문 →</a></li></ul></details>
-</div>
-<footer>© 2026 Macultist · <a href="mailto:macultist@gmail.com" style="color:inherit">문의</a> · 각 서비스의 개인정보처리방침은 해당 사이트 하단에 있습니다.</footer>
-</div></body></html>
+</div></section>
+</main>
+<footer><p>© 2026 Macultist · <a href="mailto:macultist@gmail.com">문의</a> · 각 서비스의 개인정보처리방침은 해당 사이트 하단에 있습니다.</p></footer>
+</body></html>
