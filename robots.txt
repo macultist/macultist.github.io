@@ -6,3 +6,4 @@ Sitemap: https://macultist.kr/petfee/sitemap.xml
 Sitemap: https://macultist.kr/devparam/sitemap.xml
 Sitemap: https://macultist.kr/waste/sitemap.xml
 Sitemap: https://macultist.kr/restarea/sitemap.xml
+Sitemap: https://macultist.kr/aiterms/sitemap.xml
