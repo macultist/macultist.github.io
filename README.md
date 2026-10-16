@@ -8,4 +8,4 @@
 - /devparam/ - 반도체 소자 파라미터 추출기 (저장소 macultist/devparam)
 - /waste/ - 우리동네 쓰레기 (저장소 macultist/waste)
 
-© 2026 최수원. All rights reserved. 무단 복제·전재를 금지합니다.
+© 2026 최수원. All rights reserved. 무단 복제, 전재를 금지합니다.
